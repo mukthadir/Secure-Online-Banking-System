@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Usercritical" table="usercritical" catalog="cse545group4bank">
+        <id name="username" type="string">
+            <column name="USERNAME" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="ssn" type="string">
+            <column name="SSN" length="45" />
+        </property>
+        <property name="employeeIdRequested" type="string">
+            <column name="EMPLOYEE_ID_REQUESTED" length="45" />
+        </property>
+        <property name="isAdminApproved" type="java.lang.Boolean">
+            <column name="IS_ADMIN_APPROVED" />
+        </property>
+        <property name="emailId" type="string">
+            <column name="EMAIL_ID" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

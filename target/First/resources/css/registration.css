@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+#mandatory{
+	color:red;
+	font-style:italic;
+}
+
+#dob-rule,#name-rules,#lname-rules,#email-rule,#ssn-rule,#pass-rule,#user-rule,#phone-rule,#security-rule1,#security-rule2,#sec2-required,#sec1-required,#password-required,#username-required,#dob-required,#gender-required,#phone-required,#ssn-required,#address-required,#address-rule,#email-required,#lastname-required,#firstname-required
+{
+	display:none;
+	font-size:0.9em;
+}

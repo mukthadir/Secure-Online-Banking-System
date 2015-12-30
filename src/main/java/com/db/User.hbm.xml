@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="User" table="user" catalog="cse545group4bank">
+        <id name="username" type="string">
+            <column name="USERNAME" length="45" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="200" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="50" not-null="true" />
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="EMAIL_ADDRESS" length="45" not-null="true" />
+        </property>
+        <property name="ssn" type="string">
+            <column name="SSN" length="45" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="GENDER" length="45" not-null="true" />
+        </property>
+        <property name="dob" type="string">
+            <column name="DOB" length="20" not-null="true" />
+        </property>
+        <property name="securityQ1" type="string">
+            <column name="SECURITY_Q1" length="45" not-null="true" />
+        </property>
+        <property name="securityQ2" type="string">
+            <column name="SECURITY_Q2" length="45" not-null="true" />
+        </property>
+        <property name="securityA1" type="string">
+            <column name="SECURITY_A1" length="45" not-null="true" />
+        </property>
+        <property name="securityA2" type="string">
+            <column name="SECURITY_A2" length="45" not-null="true" />
+        </property>
+        <property name="checkingsAccountNumber" type="int">
+            <column name="CHECKINGS_ACCOUNT_NUMBER" not-null="true" />
+        </property>
+        <property name="publicKey" type="string">
+            <column name="PUBLIC_KEY" length="90" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

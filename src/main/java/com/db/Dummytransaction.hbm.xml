@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Dummytransaction" table="dummytransaction" catalog="cse545group4bank">
+        <id name="transactionId" type="java.lang.Integer">
+            <column name="TRANSACTION_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="accountSummaryByUserReceiving" class="AccountSummary" fetch="select">
+            <column name="USER_RECEIVING" />
+        </many-to-one>
+        <many-to-one name="accountSummaryByUserSending" class="AccountSummary" fetch="select">
+            <column name="USER_SENDING" />
+        </many-to-one>
+        <many-to-one name="employee" class="Employee" fetch="select">
+            <column name="EMPLOYEE_ID_REVIEWING" length="40" />
+        </many-to-one>
+        <property name="amount" type="int">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="time" type="string">
+            <column name="TIME" length="40" />
+        </property>
+        <property name="critical" type="java.lang.Boolean">
+            <column name="CRITICAL" />
+        </property>
+        <property name="reviewedByEmployee" type="java.lang.Boolean">
+            <column name="REVIEWED_BY_EMPLOYEE" />
+        </property>
+        <property name="isMerchantTransaction" type="java.lang.Boolean">
+            <column name="IS_MERCHANT_TRANSACTION" />
+        </property>
+        <property name="isApprovedByUser" type="java.lang.Boolean">
+            <column name="IS_APPROVED_BY_USER" />
+        </property>
+        <property name="isRejectedByUser" type="java.lang.Boolean">
+            <column name="IS_REJECTED_BY_USER" />
+        </property>
+        <property name="isRejectedByEmployee" type="java.lang.Boolean">
+            <column name="IS_REJECTED_BY_EMPLOYEE" />
+        </property>
+        <property name="adminReviewing" type="java.lang.Boolean">
+            <column name="ADMIN_REVIEWING" />
+        </property>
+        <property name="message" type="string">
+            <column name="MESSAGE" length="45" />
+        </property>
+        <property name="modifyFlag" type="java.lang.Boolean">
+            <column name="MODIFY_FLAG" />
+        </property>
+        <property name="modifyTransactionFlag" type="java.lang.Boolean">
+            <column name="MODIFY_TRANSACTION_FLAG" />
+        </property>
+        <property name="transactionMessage" type="string">
+            <column name="TRANSACTION_MESSAGE" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

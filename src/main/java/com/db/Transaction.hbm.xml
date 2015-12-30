@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Transaction" table="transaction" catalog="cse545group4bank">
+        <id name="transactionId" type="int">
+            <column name="TRANSACTION_ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="accountSummaryBySender" class="AccountSummary" fetch="select">
+            <column name="SENDER" not-null="true" />
+        </many-to-one>
+        <many-to-one name="employee" class="Employee" fetch="select">
+            <column name="EMPLOYEE_ID_REVIEWING_TRANSACTION" length="40" />
+        </many-to-one>
+        <many-to-one name="accountSummaryByReceiver" class="AccountSummary" fetch="select">
+            <column name="RECEIVER" not-null="true" />
+        </many-to-one>
+        <property name="amount" type="int">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="time" type="string">
+            <column name="TIME" length="20" not-null="true" />
+        </property>
+        <property name="critical" type="java.lang.Boolean">
+            <column name="CRITICAL" />
+        </property>
+        <property name="reviewedByUser" type="java.lang.Boolean">
+            <column name="REVIEWED_BY_USER" />
+        </property>
+        <property name="reviewedByEmployee" type="java.lang.Boolean">
+            <column name="REVIEWED_BY_EMPLOYEE" />
+        </property>
+        <property name="deleteFlag" type="java.lang.Boolean">
+            <column name="DELETE_FLAG" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Employee" table="employee" catalog="cse545group4bank">
+        <id name="employeeId" type="string">
+            <column name="EMPLOYEE_ID" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeName" type="string">
+            <column name="EMPLOYEE_NAME" length="45" not-null="true" />
+        </property>
+        <property name="employeeUsername" type="string">
+            <column name="EMPLOYEE_USERNAME" length="45" not-null="true" />
+        </property>
+        <property name="employeeSalary" type="string">
+            <column name="EMPLOYEE_SALARY" length="45" />
+        </property>
+        <property name="employeeDesignation" type="string">
+            <column name="EMPLOYEE_DESIGNATION" length="45" />
+        </property>
+        <property name="employeeDeleteFlag" type="java.lang.Boolean">
+            <column name="EMPLOYEE_DELETE_FLAG" />
+        </property>
+        <property name="employeeEmailId" type="string">
+            <column name="EMPLOYEE_EMAIL_ID" length="45" not-null="true" />
+        </property>
+        <property name="securityA1" type="string">
+            <column name="SECURITY_A1" length="45" not-null="true" />
+        </property>
+        <property name="securityA2" type="string">
+            <column name="SECURITY_A2" length="45" not-null="true" />
+        </property>
+        <set name="transactions" table="transaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_REVIEWING_TRANSACTION" length="40" />
+            </key>
+            <one-to-many class="Transaction" />
+        </set>
+        <set name="accountSummaries" table="account_summary" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_REVIEWING" length="40" />
+            </key>
+            <one-to-many class="AccountSummary" />
+        </set>
+        <set name="dummytransactions" table="dummytransaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMPLOYEE_ID_REVIEWING" length="40" />
+            </key>
+            <one-to-many class="Dummytransaction" />
+        </set>
+    </class>
+</hibernate-mapping>

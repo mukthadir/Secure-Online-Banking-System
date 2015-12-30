@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Merchantinfo" table="merchantinfo" catalog="cse545group4bank">
+        <id name="merchantId" type="string">
+            <column name="MERCHANT_ID" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="merchantName" type="string">
+            <column name="MERCHANT_NAME" length="45" not-null="true" />
+        </property>
+        <property name="merchantEmail" type="string">
+            <column name="MERCHANT_EMAIL" length="45" not-null="true" />
+        </property>
+        <property name="merchantAddress" type="string">
+            <column name="MERCHANT_ADDRESS" length="45" not-null="true" />
+        </property>
+        <property name="merchantIncomeTaxNumber" type="string">
+            <column name="MERCHANT_INCOME_TAX_NUMBER" length="45" not-null="true" />
+        </property>
+        <property name="merchantDeleteFlag" type="java.lang.Boolean">
+            <column name="MERCHANT_DELETE_FLAG" />
+        </property>
+        <property name="merchantAccountNumber" type="int">
+            <column name="MERCHANT_ACCOUNT_NUMBER" not-null="true" />
+        </property>
+        <property name="merchantA1" type="string">
+            <column name="MERCHANT_A1" length="40" />
+        </property>
+        <property name="merchantA2" type="string">
+            <column name="MERCHANT_A2" length="45" />
+        </property>
+        <property name="publicKey" type="string">
+            <column name="PUBLIC_KEY" length="90" />
+        </property>
+    </class>
+</hibernate-mapping>

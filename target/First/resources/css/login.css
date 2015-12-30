@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+#name-invalid
+{
+	display:none;
+}
+
+#length-invalid
+{
+	display:none;
+}
+
+#pwd-invalid
+{
+	display:none;
+}
+
+#length-pwd
+{
+	display:none;
+}
+
+#error-mssg,#error-mssg-pwd
+{
+	display:none;
+}

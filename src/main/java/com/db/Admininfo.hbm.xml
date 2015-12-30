@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 6, 2014 12:59:43 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Admininfo" table="admininfo" catalog="cse545group4bank">
+        <id name="adminId" type="string">
+            <column name="ADMIN_ID" length="40" />
+            <generator class="assigned" />
+        </id>
+        <property name="adminName" type="string">
+            <column name="ADMIN_NAME" length="45" not-null="true" />
+        </property>
+        <property name="adminEmail" type="string">
+            <column name="ADMIN_EMAIL" length="45" not-null="true" />
+        </property>
+        <property name="securityA1" type="string">
+            <column name="SECURITY_A1" length="45" not-null="true" />
+        </property>
+        <property name="securityA2" type="string">
+            <column name="SECURITY_A2" length="45" not-null="true" />
+        </property>
+        <property name="securityQ1" type="string">
+            <column name="SECURITY_Q1" length="45" not-null="true" />
+        </property>
+        <property name="securityQ2" type="string">
+            <column name="SECURITY_Q2" length="45" not-null="true" />
+        </property>
+        <property name="publicKey" type="string">
+            <column name="PUBLIC_KEY" length="90" />
+        </property>
+    </class>
+</hibernate-mapping>
